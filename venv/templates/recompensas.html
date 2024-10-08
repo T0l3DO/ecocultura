@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recompensas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Recompensas</h2>
+        <p>Pontos acumulados: <strong>{{ total_pontos }}</strong></p>
+
+        <h3>Recompensas Desbloqueadas:</h3>
+        <ul class="rewards-list">
+            {% for recompensa in recompensas_obtidas %}
+                <li class="reward-item">{{ recompensa }}</li>
+            {% else %}
+                <li class="reward-item">Nenhuma recompensa desbloqueada.</li>
+            {% endfor %}
+        </ul>
+        <a href="/cadastro_material">
+            <button>Cadastrar Mais Materiais</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Materiais</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class"cadastro">
+        <h4>Cadastro de Materiais</h4>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/recompensas">Ver Recompensas</a>
+        </nav>
+    </header>
+
+    <main>
+        <form action="/cadastro" method="POST">
+            <label for="material">Tipo de Material:</label>
+            <select id="material" name="material" required>
+                <option value="metal">Metal</option>
+                <option value="plastico">Plástico</option>
+                <option value="papel">Papel</option>
+                <option value="vidro">Vidro</option>
+            </select>
+
+            <label for="peso">Peso (gramas):</label>
+            <input type="number" id="peso" name="peso" required>
+
+            <label for="endereco">Endereço de Retirada:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <button type="submit">Cadastrar Material</button>
+        </form>
+    </main>
+</body>
+</html>

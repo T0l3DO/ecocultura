@@ -1,0 +1,120 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7; /* Cinza claro */
+    color: #333; /* Texto em um tom escuro para contraste */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px; /* Largura máxima para centralizar conteúdo */
+    margin: 20px auto; /* Margem superior e inferior, centralizado */
+    padding: 20px;
+    background-color: #fff; /* Fundo branco para contraste */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Cabeçalho */
+.header-container {
+    background-color: #e0e0e0; /* Cinza um pouco mais escuro para o cabeçalho */
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px 8px 0 0; /* Bordas arredondadas apenas no topo */
+}
+
+.header-title {
+    margin: 0;
+    font-size: 24px; /* Tamanho da fonte do título */
+}
+
+/* Navegação */
+.nav-container {
+    margin-top: 10px;
+}
+
+.nav-link {
+    margin: 0 15px;
+    color: #333; /* Cor do texto da navegação */
+    text-decoration: none; /* Sem sublinhado */
+    font-weight: bold; /* Negrito */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Formulários */
+.form-group {
+    margin: 15px 0; /* Margem para cada grupo de formulário */
+}
+
+label {
+    display: block; /* Cada label ocupa uma linha */
+    margin-bottom: 5px; /* Espaço abaixo da label */
+    font-weight: bold; /* Negrito para as labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+button {
+    background-color: #4CAF50; /* Verde claro */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Cursor de ponteiro */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+button:hover {
+    background-color: #45a049; /* Verde um pouco mais escuro ao passar o mouse */
+}
+
+/* Recompensas */
+.rewards-list {
+    list-style: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove espaçamento */
+}
+
+.reward-item {
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    padding: 10px; /* Espaçamento interno */
+    margin: 5px 0; /* Margem entre os itens */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Pop-up */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Fundo branco */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    padding: 20px; /* Espaçamento interno */
+    z-index: 1000; /* Coloca o pop-up acima de outros elementos */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza texto */
+}
+
+.popup-content {
+    margin: 10px 0; /* Espaçamento entre elementos */
+}
+
+.hidden {
+    display: none; /* Esconde o pop-up quando necessário */
+}

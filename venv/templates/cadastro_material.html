@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Materiais</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Materiais Recicláveis</h2>
+        <form method="POST">
+            <label for="material">Tipo de Material:</label>
+            <select id="material" name="material" required>
+                <option value="metal">Metal</option>
+                <option value="plastico">Plástico</option>
+                <option value="papel">Papel</option>
+                <option value="vidro">Vidro</option>
+            </select>
+
+            <label for="peso">Peso (em gramas):</label>
+            <input type="number" id="peso" name="peso" required>
+
+            <button type="submit">Cadastrar Material</button>
+        </form>
+    </div>
+</body>
+</html>
