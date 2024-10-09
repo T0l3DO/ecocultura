@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, url_for, session, request
-import os
 
 app = Flask(__name__)
 app.secret_key = 'segredo'
@@ -31,17 +30,15 @@ def cadastro_material():
         peso = float(request.form['peso'])
         session['materiais'].append({'tipo': tipo, 'peso': peso})
         
-        return redirect(url_for('recompensas'))
+        return redirect(url_for('dashboard'))
 
     return render_template('cadastro_material.html')
 
-@app.route('/recompensas')
-def recompensas():
+@app.route('/dashboard')
+def dashboard():
+    nome = session.get('nome', 'Usuário')
     materiais = session.get('materiais', [])
     total_pontos = calcular_pontos(materiais)
-
-    if total_pontos is None:
-        total_pontos = 0
 
     recompensas_disponiveis = [
         {'nome': '1h de estacionamento', 'pontos': 150},
@@ -51,19 +48,6 @@ def recompensas():
 
     recompensas_obtidas = [r['nome'] for r in recompensas_disponiveis if total_pontos >= r['pontos']]
     
-    # Salvar total de pontos e recompensas na sessão
-    session['total_pontos'] = total_pontos
-    session['recompensas_obtidas'] = recompensas_obtidas
-
-    return redirect(url_for('dashboard'))
-
-@app.route('/dashboard')
-def dashboard():
-    nome = session.get('nome', 'Usuário')
-    materiais = session.get('materiais', [])
-    total_pontos = session.get('total_pontos', 0)
-    recompensas_obtidas = session.get('recompensas_obtidas', [])
-
     return render_template('dashboard.html', nome=nome, materiais=materiais, total_pontos=total_pontos, recompensas_obtidas=recompensas_obtidas)
 
 def calcular_pontos(materiais):
@@ -81,4 +65,4 @@ def calcular_pontos(materiais):
     return total_pontos
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=True)
