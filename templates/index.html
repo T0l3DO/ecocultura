@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-vindo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('img', filename='logo.png') }}">
 </head>
 <body>
   <header>
@@ -12,7 +13,7 @@
             <div class="logo">
                 <!-- Substituindo o texto pelo logo -->
   
-                <a href="#"><img src="caminho/para/sua-logo.png" alt="Logo Eco Cultura" class="logo-img"></a>
+                <a href="#"><img src="{{ url_for('img', filename='logo.png') }}" alt="Logo Eco Cultura" class="logo-img"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="#">Início</a></li>
