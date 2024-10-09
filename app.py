@@ -30,6 +30,9 @@ def cadastro_dados():
 
 @app.route('/cadastro_material', methods=['GET', 'POST'])
 def cadastro_material():
+    if 'materiais' not in session:
+        session['materiais'] = []
+
     if request.method == 'POST':
         tipo = request.form['material']
         peso = request.form['peso']
@@ -50,7 +53,6 @@ def cadastro_material():
         return redirect(url_for('recompensas'))
 
     return render_template('cadastro_material.html')
-
 @app.route('/recompensas')
 def recompensas():
     materiais = session.get('materiais', [])
