@@ -30,9 +30,13 @@ def cadastro_material():
         peso = float(request.form['peso'])
         session['materiais'].append({'tipo': tipo, 'peso': peso})
         
+        # Verificar os dados da sessão
+        print(session)  # Isso permitirá visualizar os dados no console
+        
         return redirect(url_for('dashboard'))
 
     return render_template('cadastro_material.html')
+
 
 @app.route('/dashboard')
 def dashboard():
