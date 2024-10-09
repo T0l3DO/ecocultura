@@ -5,37 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
 </head>
 <body>
-    <<div class="dashboard-container">
+    <div class="dashboard-container">
         <div class="header">
             <h1>Bem-vindo, {{ nome }}!</h1>
             <p>Veja o resumo da sua coleta de materiais recicláveis.</p>
@@ -67,15 +39,31 @@
 
         <div class="section">
             <h2>Recompensas Obtidas</h2>
-            <ul>
+            <ul class="rewards-list">
                 {% if recompensas_obtidas %}
                     {% for recompensa in recompensas_obtidas %}
-                    <li>{{ recompensa }}</li>
+                    <li class="reward-item">{{ recompensa }}</li>
                     {% endfor %}
                 {% else %}
-                    <li>Você ainda não possui recompensas suficientes.</li>
+                    <li class="reward-item">Você ainda não possui recompensas suficientes.</li>
                 {% endif %}
             </ul>
+        </div>
+
+        <div class="container">
+            <h2>Recompensas</h2>
+            <p>Pontos acumulados: <strong>{{ total_pontos }}</strong></p>
+
+            <h3>Recompensas Desbloqueadas:</h3>
+            <ul class="rewards-list">
+                {% for recompensa in recompensas_obtidas %}
+                    <li class="reward-item">{{ recompensa }}</li>
+                {% else %}
+                    <li class="reward-item">Nenhuma recompensa desbloqueada.</li>
+                {% endfor %}
+            </ul>
+
+            <a href="/cadastro_material" class="btn btn-primary">Cadastrar mais materiais</a>
         </div>
     </div>
 </body>
