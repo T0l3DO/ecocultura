@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bem-vindo, {{ nome }}!</h1>
+            <p>Veja o resumo da sua coleta de materiais recicláveis.</p>
+        </div>
+
+        <div class="section">
+            <h2>Materiais Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Material</th>
+                        <th>Peso (g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for material in materiais %}
+                    <tr>
+                        <td>{{ material.tipo }}</td>
+                        <td>{{ material.peso }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Total de Pontos: {{ total_pontos }}</h2>
+        </div>
+
+        <div class="section">
+            <h2>Recompensas Obtidas</h2>
+            <ul>
+                {% if recompensas_obtidas %}
+                    {% for recompensa in recompensas_obtidas %}
+                    <li>{{ recompensa }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li>Você ainda não possui recompensas suficientes.</li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
