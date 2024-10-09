@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <!-- Substituindo o texto pelo logo -->
+  
+                <a href="#"><img src="static\logo.png" class="logo-img"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <h2>Cadastro de Materiais Recicláveis</h2>
         <form method="POST">
