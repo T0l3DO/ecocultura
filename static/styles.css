@@ -5,13 +5,58 @@ body {
     background-color: #f7f7f7;
 }
 
+/* Estiliza o container do formulário */
+/* Estiliza o container do formulário */
 .container {
-    max-width: 700px;
-    margin: 30px auto;
+    max-width: 600px;
+    margin: 20px auto;
     padding: 40px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Cor de fundo do container */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estiliza o título */
+h2 {
+    text-align: center; /* Centraliza o título */
+    color: #4CAF50; /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+/* Estiliza os rótulos dos campos */
+label {
+    font-weight: Arial; /* Negrito */
+    margin-top: 10px; /* Espaço acima */
+    display: block; /* Cada rótulo em sua própria linha */
+}
+
+/* Estiliza os campos de entrada */
+input[type="text"],
+input[type="email"] {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    margin: 8px 0 20px 0; /* Margens */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Estiliza o botão */
+button {
+    background-color: #4CAF50; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 15px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
 }
 
 h1, h2, h3 {
