@@ -77,3 +77,17 @@ button:hover {
     background-color: #0056b3;
     border-radius: 10px; /* Mantém as bordas arredondadas ao passar o mouse */
 }
+.logo-img {
+    width: 150px;  /* Define a largura da imagem */
+    height: auto;  /* Mantém a proporção da imagem */
+    display: block;  /* Remove espaçamento em torno da imagem */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+    padding: 10px;  /* Adiciona um espaçamento ao redor da imagem */
+    transition: transform 0.3s ease;  /* Suaviza o efeito de hover */
+}
+
+.logo-img:hover {
+    transform: scale(1.1);  /* Aumenta levemente o tamanho ao passar o mouse */
+}
+
+
