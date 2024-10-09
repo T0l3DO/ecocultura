@@ -7,11 +7,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                <!-- Substituindo o texto pelo logo -->
+  
+                <a href="#"><img src="caminho/para/sua-logo.png" alt="Logo Eco Cultura" class="logo-img"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <h1>Bem-vindo ao Sistema de Recompensas!</h1>
-        <a href="{{ url_for('cadastro_dados') }}">
-            <button>Cadastrar Dados</button>
+         <center><h3>Realize seu cadastro para continuar</h3>
+        <a href="{{ url_for('cadastro_dados') }}"><br><br>
+         <button>Cadastrar Dados</button></center>
         </a>
     </div>
+  <div class="container"><h7>seja bem vindo ao nosso projeto, nossa ideia principal é a elaboração de um sistema de recompensas que visa melhorar a dinamica entre nós e a natureza</h7></div>
 </body>
 </html>
