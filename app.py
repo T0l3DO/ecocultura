@@ -37,7 +37,7 @@ def cadastro_material():
         # Validação do peso
         try:
             peso = float(peso)
-            if peso <= 0 or peso > 10000:  # Peso deve ser positivo e não exceder 10.000g
+            if peso <= 0 or peso > 10000000:  # Peso deve ser positivo e não exceder 10.000g
                 flash('Peso inválido! Insira um peso entre 1 e 10.000 gramas.', 'error')
                 return redirect(url_for('cadastro_material'))
         except ValueError:
